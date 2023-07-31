@@ -1,6 +1,6 @@
 # 1: KGOG-TV (Programming Hub)
 
-<div align="center"><img src="EXAPUNKS - Digital Library Project (1312, 50, 74, 2023-05-19-15-09-12).gif" /></div>
+<div align="center"><img src="EXAPUNKS - KGOG-TV (mutex8021, 2023-07-31-12-14-55).gif" /></div>
 
 ## Instructions
 > To win this battle you must make your movies play for longer than your opponent's. A movie will play when that movie's file is the only movie file sitting in a *channel* host.

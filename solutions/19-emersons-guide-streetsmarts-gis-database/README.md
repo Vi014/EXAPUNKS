@@ -1,6 +1,6 @@
 # 19: Emerson's Guide (Streetsmarts GIS Database)
 
-<div align="center"><img src="EXAPUNKS - Mitsuzen HDI-10 (274, 51, 601, 2023-05-19-15-14-32).gif" /></div>
+<div align="center"><img src="EXAPUNKS - Emerson's Guide (52, 42, 6, 2023-07-31-12-21-47).gif" /></div>
 
 ## Instructions
 > Each host contains a list of restaurants and their ratings, from one to five stars (file 200). Locate the entry that corresponds to the Last Stop on Eddy Street and change its rating from one to five stars.

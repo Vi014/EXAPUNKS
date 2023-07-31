@@ -1,6 +1,6 @@
 # 5: Aberdeen (selenium_wolf)
 
-<div align="center"><img src="EXAPUNKS - TEC EXA-Blaster™ Modem (970, 58, 26, 2023-05-19-15-38-50).gif" /></div>
+<div align="center"><img src="EXAPUNKS - Aberdeen (selenium _wolf, 2023-07-31-12-30-31).gif" /></div>
 
 ## Instructions
 > To win this battle you must occupy a majority of the hosts for as long as possible. You occupy a host if you have more EXAs in it than your opponent.

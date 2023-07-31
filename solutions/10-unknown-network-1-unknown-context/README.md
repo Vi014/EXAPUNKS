@@ -1,6 +1,6 @@
 # 10: Unknown Network 1 (Unknown Context)
 
-<div align="center"><img src="EXAPUNKS - UC Berkeley (424, 36, 7, 2023-05-19-15-03-18).gif" /></div>
+<div align="center"><img src="EXAPUNKS - UNKNOWN NETWORK 1 (29, 23, 27, 2023-07-31-12-13-36).gif" /></div>
 
 ## Instructions
 > Find file 276 in the network and bring it back to your host.

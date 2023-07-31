@@ -1,6 +1,6 @@
 # 5: Euclid's Pizza (Order System)
 
-<div align="center"><img src="EXAPUNKS - Euclid's Pizza (25, 16, 1, 2023-05-19-15-01-50).gif" /></div>
+<div align="center"><img src="EXAPUNKS - Euclid's Pizza (25, 16, 1, 2023-07-31-12-12-45).gif" /></div>
 
 ## Instructions
 > Append your order (file 300) to the end of the order list (file 200).

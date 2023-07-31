@@ -1,6 +1,6 @@
 # 3: Deadlock's Domain (Deadlock)
 
-<div align="center"><img src="EXAPUNKS - King's Ransom Online (335, 38, 25, 2023-05-19-15-21-09).gif" /></div>
+<div align="center"><img src="EXAPUNKS - Deadlock's Domain (deadlock, 2023-07-31-12-23-55).gif" /></div>
 
 ## Instructions
 > To win this battle you must grab files as they spawn in the central hosts and bring them back to your host. 

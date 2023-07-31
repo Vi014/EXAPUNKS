@@ -1,6 +1,6 @@
 # 33: TEC EXA-Blaster Modem (Pager Network)
 
-<div align="center"><img src="EXAPUNKS - Motor Vehicle Administration (653, 80, 7, 2023-05-19-15-41-01).gif" /></div>
+<div align="center"><img src="EXAPUNKS - TEC EXA-Blaster™ Modem (970, 58, 26, 2023-07-31-12-54-09).gif" /></div>
 
 ## Instructions
 > Connect to each pager and copy EMBER-2's message (file 300) to the screen (#DATA). Then activate all of the pagers at exactly the same time by writing a value to each #PAGE register in the same cycle.

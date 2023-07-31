@@ -1,6 +1,6 @@
 # 26: Equity First Bank (San Francisco (ATMs Offline)
 
-<div align="center"><img src="EXAPUNKS - TEC EXA-Blaster™ Modem (2877, 57, 18, 2023-05-19-15-24-17).gif" /></div>
+<div align="center"><img src="EXAPUNKS - Equity First Bank (446, 70, 6, 2023-07-31-12-26-48).gif" /></div>
 
 ## Instructions
 > ï»¿Move EMBER-2's new account (file 300) into *checking*. Then iterate over the checking accounts listed in the directory (file 199) and, in that order, transfer $1.00 from each target account to EMBER-2's account. Finally, add the file ID of EMBER-2's account file to the end of the directory.

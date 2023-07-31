@@ -1,6 +1,6 @@
 # 4: The Wormhole (X10X10X)
 
-<div align="center"><img src="EXAPUNKS - Last Stop SNAXNET (421, 98, 26, 2023-05-19-15-25-40).gif" /></div>
+<div align="center"><img src="EXAPUNKS - The Wormhole (x10x10x, 2023-07-31-12-27-08).gif" /></div>
 
 ## Instructions
 > To win this battle you must fill the network's hosts with as many of your EXAs as you can. Note that each pair of test runs has its own unique network layout, with bi-directional links between hosts that use the prime numbers between 2 and 13 as link IDs (2, 3, 5, 7, 11, and 13).

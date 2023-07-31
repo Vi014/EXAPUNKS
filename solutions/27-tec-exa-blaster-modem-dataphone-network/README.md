@@ -1,6 +1,6 @@
 # 27: TEC EXA-Blaster Modem (Dataphone Network)
 
-<div align="center"><img src="EXAPUNKS - Holman Dynamics (12837, 71, 3, 2023-05-19-15-26-47).gif" /></div>
+<div align="center"><img src="EXAPUNKS - TEC EXA-Blaster™ Modem (2877, 57, 18, 2023-07-31-12-27-26).gif" /></div>
 
 ## Instructions
 > Using your modem, connect to each dataphone so that EMBER-2 will have a list of valid phone numbers.

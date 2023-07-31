@@ -1,6 +1,6 @@
 # 28: Last Stop Snaxnet (Warehouse 27)
 
-<div align="center"><img src="EXAPUNKS - Aberdeen (selenium_wolf, 2023-05-19-15-27-46).gif" /></div>
+<div align="center"><img src="EXAPUNKS - Last Stop SNAXNET (421, 98, 26, 2023-07-31-12-28-31).gif" /></div>
 
 ## Instructions
 > An array of five Zippe-type gas centrifuges, ZGC0 through ZGC4, are connected in a cascade configuration.

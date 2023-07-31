@@ -1,6 +1,6 @@
 # 30: Holman Dynamics (Sales System)
 
-<div align="center"><img src="EXAPUNKS - UNKNOWN NETWORK 2 (429, 32, 56, 2023-05-19-15-38-04).gif" /></div>
+<div align="center"><img src="EXAPUNKS - Holman Dynamics (12837, 71, 3, 2023-07-31-12-29-13).gif" /></div>
 
 ## Instructions
 > Create a file in your host containing the contiguous 16-value sequence from the garbage file (file 199) that is a valid credit card number. There will be exactly one such sequence.

@@ -1,6 +1,6 @@
 # 25: KGOG-TV (Satellite Uplink)
 
-<div align="center"><img src="EXAPUNKS - The Wormhole (x10x10x, 2023-05-19-15-23-46).gif" /></div>
+<div align="center"><img src="EXAPUNKS - KGOG-TV (742, 100, 9, 2023-07-31-12-26-21).gif" /></div>
 
 ## Instructions
 > Align the satellite dish with the target satellite by setting the azimuth, elevation, and frequency. Then transmit the data from EMBER-2's video (file 301) after encrypting it using the TV station's encryption key (file 199).
