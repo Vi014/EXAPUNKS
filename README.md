@@ -1,25 +1,4 @@
-<p align="center"><a href="https://store.steampowered.com/app/716490/EXAPUNKS/" target="_blank" rel="noopener noreferrer"><img src="assets/header.jpg" alt="EXAPUNKS logo"></a></p>
-
-> The year is 1997. You used to be a hacker, but now you have the phage. You made a deal: one hack, one dose. There’s nothing left to lose… except your life.
-
 # EXAPUNKS
-
-My solutions to the game [EXAPUNKS](https://store.steampowered.com/app/716490/EXAPUNKS/) by [Zachtronics](https://www.zachtronics.com/) in which you need to solve puzzles by writing tiny programs in an [assembly-like language](https://steamcommunity.com/sharedfiles/filedetails/?id=1480557969).
-
-Missing the bonus campaign and achievements (didn't even knew there was any!), might add them eventually, I had so much fun! Will have to play other Zachtronics games as well.
-
-There is no earth-shattering records here, I was playing for fun, aiming to get the less cycles. My solution to the last challenge is particulary bad (and interesting!) but I wanted to finish the game (might revisit it someday).
-
-Also include a quick `.solution` (game's file format) parser to [auto-generate](EXA-Parser) this repo.
-
-*Each of the solutions also include the auto-generated **GIFs** as well*
-
-## Zines
-
-- [Issue #1](assets/digital_en_1.pdf) (language reference starts at page 14)
-- [Issue #2](assets/digital_en_2.pdf)
-
-## Solutions
 
 <!-- EXA_START -->
 | Level                                                                                                                            | Cycles | Size | Activity |
@@ -67,31 +46,3 @@ Also include a quick `.solution` (game's file format) parser to [auto-generate](
 | [4: The Wormhole (X10X10X)](battles/04-the-wormhole-x10x10x)                                                                    | 100  | 0     | 0      | S+     |
 | [5: Aberdeen (selenium_wolf)](battles/05-aberdeen-seleniumwolf)                                                                 | 100  | 0     | 0      | S+     |
 <!-- EXA_END -->
-
-## Save files location
-
-Gamepass PC:
-```
-%LOCALAPPDATA%\Packages\58020AllianceMetaversalSt.EXAPUNKS_j78hpz8e66gfw\SystemAppData\xgs\0009000000DE7310_00000000000000000000000065287F60\all
-```
-
-Windows:
-```
-%USERPROFILE%\Documents\My Games\EXAPUNKS\<user-id>\
-```
-
-Mac:
-```
-$HOME/Library/Application Support/EXAPUNKS/<user-id>/
-```
-
-Linux:
-```
-~/.local/share/EXAPUNKS/<user-id>/
-```
-
-## TODO
-- [ ] Generate circa 1997 geocities static html pages
-- [ ] [Achievements](https://steamcommunity.com/stats/716490/achievements)
-- [ ] Bonus Levels
-- [ ] Nonograms
