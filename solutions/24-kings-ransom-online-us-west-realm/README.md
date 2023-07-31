@@ -11,11 +11,11 @@
 
 ## Solution
 
-### [XA](XA.exa) (global)
+### [XA](XA.exa) (local)
 ```asm
 GRAB 300
 COPY F X
-WIPE
+DROP
 LINK 800
 
 COPY 5 T
@@ -45,8 +45,6 @@ GRAB 200
 SEEK 2
 COPY X F
 MARK END
-LINK -1
-LINK -1
 HALT
 
 MARK GRAB
@@ -63,4 +61,4 @@ COPY X F
 #### Results
 | Cycles | Size | Activity |
 |--------|------|----------|
-| 0      | 0    | 0        |
+| 335    | 38   | 25       |

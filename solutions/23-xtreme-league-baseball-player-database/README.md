@@ -16,14 +16,74 @@
 ### [XA](XA.exa) (global)
 ```asm
 LINK 800
-LINK 799
-LINK 800
-LINK 800
-LINK 800
-LINK 800
+COPY 200 X
+MARK LOOP
+REPL READ
+ADDI X 1 X
+COPY 17 T
+MARK WAIT
+SUBI T 1 T
+TJMP WAIT
+TEST X > 299
+FJMP LOOP
+COPY -1 M
+HALT
+MARK READ
+GRAB X
+MARK TRANSF
+COPY F M
+TEST EOF
+FJMP TRANSF
+```
+
+### [XB](XB.exa) (global)
+```asm
+MAKE
+COPY 0 F
+COPY 0 F
+
+MARK CALC
+COPY M X
+TEST X = -1
+TJMP END
+COPY X F
+SEEK -2
+
+COPY M X
+ADDI X M X
+ADDI X M X
+DIVI X 3 X
+
+COPY M T
+MULI T M T
+DIVI T M T
+
+ADDI X T X
+
+COPY M T
+SUBI T M T
+MULI T 20 T
+
+ADDI X T X
+
+TEST X > F
+TJMP REPLACE
+JUMP CALC
+
+MARK REPLACE
+COPY F T
+SEEK -3
+COPY T F
+COPY X F
+JUMP CALC
+
+MARK END
+SEEK -1
+VOID F
+VOID F
 ```
 
 #### Results
 | Cycles | Size | Activity |
 |--------|------|----------|
-| 0      | 0    | 0        |
+| 3916   | 53   | 1        |

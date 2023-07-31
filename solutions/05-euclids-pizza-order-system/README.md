@@ -12,15 +12,28 @@
 ### [XA](XA.exa) (global)
 ```asm
 LINK 800
-LINK 800
-LINK 805
-MARK RAVE
-COPY 0 #POWR
-COPY 1 #POWR
-JUMP RAVE
+GRAB 200
+SEEK 9999
+COPY 5 X
+MARK LOOP
+COPY M F
+SUBI X 1 X
+TEST X = 0
+FJMP LOOP
+HALT
+```
+
+### [XB](XB.exa) (global)
+```asm
+GRAB 300
+MARK LOOP
+COPY F M
+TEST EOF
+FJMP LOOP
+HALT
 ```
 
 #### Results
 | Cycles | Size | Activity |
 |--------|------|----------|
-| 0      | 0    | 0        |
+| 25     | 16   | 1        |

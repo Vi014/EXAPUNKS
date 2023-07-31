@@ -13,103 +13,61 @@
 
 ## Solution
 
-### [MC](MC.exa) (global)
+### [XA](XA.exa) (global)
 ```asm
 LINK 800
-LINK -3
-LINK -3
-MARK LOOP
-COPY #NERV M
-NOOP
-NOOP
-NOOP
-NOOP
-JUMP LOOP
-```
-
-### [HC](HC.exa) (global)
-```asm
-LINK 800
-LINK -3
-LINK -3
-LINK -3
-NOOP
-MARK LOOP
-NOOP
-COPY M #NERV
-NOOP
-NOOP
-NOOP
-JUMP LOOP
-```
-
-### [PC](PC.exa) (global)
-```asm
-LINK 800
-LINK -3
-LINK -3
-LINK -3
-LINK -3
-NOOP
-MARK LOOP
-NOOP
-NOOP
-NOOP
-COPY M #NERV
-JUMP LOOP
-```
-
-### [MH](MH.exa) (global)
-```asm
-LINK 800
-LINK 3
-LINK 3
-MARK LOOP
-COPY M #NERV
-NOOP
-NOOP
-NOOP
-NOOP
-JUMP LOOP
-```
-
-### [HH](HH.exa) (global)
-```asm
-LINK 800
-LINK 3
-LINK 3
-LINK 3
-@REP 4
-NOOP
-@END
-MARK LOOP
-NOOP
-COPY #NERV M
-NOOP
-NOOP
-NOOP
-JUMP LOOP
-```
-
-### [PH](PH.exa) (global)
-```asm
-LINK 800
-LINK 3
-LINK 3
-LINK 3
-LINK 3
+MARK ASDF
 @REP 2
-NOOP
+LINK -3
 @END
-MARK LOOP
-NOOP
-NOOP
-NOOP
-COPY #NERV M
-JUMP LOOP
+COPY #NERV X
+@REP 4
+LINK 3
+@END
+COPY X #NERV
+@REP 2
+LINK -3
+@END
+JUMP ASDF
+```
+
+### [XB](XB.exa) (global)
+```asm
+LINK 800
+MARK ASDF
+@REP 4
+LINK 3
+@END
+COPY #NERV X
+@REP 8
+LINK -3
+@END
+COPY X #NERV
+@REP 4
+LINK 3
+@END
+JUMP ASDF
+```
+
+### [XC](XC.exa) (global)
+```asm
+LINK 800
+MARK ASDF
+@REP 3
+LINK 3
+@END
+COPY #NERV X
+@REP 6
+LINK -3
+@END
+COPY X #NERV
+@REP 3
+LINK 3
+@END
+JUMP ASDF
 ```
 
 #### Results
 | Cycles | Size | Activity |
 |--------|------|----------|
-| 0      | 0    | 0        |
+| 274    | 51   | 601      |

@@ -74,17 +74,7 @@ COPY X M
 JUMP TEST
 ```
 
-### [XC](XC.exa) (global)
-```asm
-LINK 800
-LINK 800
-MAKE
-DROP
-NOOP
-KILL
-```
-
 #### Results
 | Cycles | Size | Activity |
 |--------|------|----------|
-| 0      | 0    | 0        |
+| 7320   | 53   | 63       |

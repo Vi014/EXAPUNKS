@@ -13,45 +13,51 @@
 
 ### [XA](XA.exa) (global)
 ```asm
-LINK 800
-LINK 800
-LINK 800
-MARK LOOP
-COPY 1 #COPY
-JUMP LOOP
+GRAB 300
+COPY F M
+SEEK -1
+COPY F M
+WIPE
 ```
 
 ### [XB](XB.exa) (global)
 ```asm
 LINK 800
-LINK 800
-LINK 801
+GRAB 200
+COPY M X
 MARK LOOP
-COPY 1 #COPY
-JUMP LOOP
+TEST F = X
+FJMP LOOP
+COPY F X
+COPY F T
+SEEK -2
+COPY 0 F
+COPY 0 F
+DROP
+GRAB 201
+SEEK 9999
+COPY X F
+COPY T F
+DROP
+WIPE
 ```
 
 ### [XC](XC.exa) (global)
 ```asm
 LINK 800
-LINK 800
-LINK 802
-MARK LOOP
-COPY 1 #COPY
-JUMP LOOP
-```
-
-### [XD](XD.exa) (global)
-```asm
-LINK 800
-LINK 800
-LINK 803
-MARK LOOP
-COPY 1 #COPY
-JUMP LOOP
+LINK 801
+COPY #DATE X
+COPY M T
+LINK -1
+GRAB 201
+SEEK 9999
+COPY X F
+COPY T F
+DROP
+WIPE
 ```
 
 #### Results
 | Cycles | Size | Activity |
 |--------|------|----------|
-| 0      | 0    | 0        |
+| 102    | 34   | 4        |
