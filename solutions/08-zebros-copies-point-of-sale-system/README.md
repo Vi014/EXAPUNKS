@@ -1,6 +1,6 @@
 # 8: Zebros Copies (Point-Of-Sale System)
 
-<div align="center"><img src="EXAPUNKS - Zebros Copies (101, 24, 4, 2022-12-05-19-20-53).gif" /></div>
+<div align="center"><img src="EXAPUNKS - SFCTA Highway Sign #4902 (168, 26, 1, 2023-05-19-15-02-51).gif" /></div>
 
 ## Instructions
 > Erase Ghast's debt to the copy shop by zeroing out his balance in the customer database (file 200) and appending a payment to the payment log (file 201) with today's date and the exact amount of his prior balance.
@@ -14,36 +14,44 @@
 ### [XA](XA.exa) (global)
 ```asm
 LINK 800
-LINK 801
-COPY #DATE X
-LINK -1
-GRAB 201
-SEEK 9999
-COPY X F
-COPY M F
-COPY M F
-COPY M F
+LINK 800
+LINK 800
+MARK LOOP
+COPY 1 #COPY
+JUMP LOOP
 ```
 
 ### [XB](XB.exa) (global)
 ```asm
-GRAB 300
-COPY F X
-DROP
 LINK 800
-GRAB 200
+LINK 800
+LINK 801
 MARK LOOP
-TEST F = X
-FJMP LOOP
-COPY X M
-COPY F M
-COPY F M
-SEEK -2
-COPY 0 F
-COPY 0 F
+COPY 1 #COPY
+JUMP LOOP
+```
+
+### [XC](XC.exa) (global)
+```asm
+LINK 800
+LINK 800
+LINK 802
+MARK LOOP
+COPY 1 #COPY
+JUMP LOOP
+```
+
+### [XD](XD.exa) (global)
+```asm
+LINK 800
+LINK 800
+LINK 803
+MARK LOOP
+COPY 1 #COPY
+JUMP LOOP
 ```
 
 #### Results
 | Cycles | Size | Activity |
 |--------|------|----------|
-| 101    | 24   | 4        |
+| 0      | 0    | 0        |

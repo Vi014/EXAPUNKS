@@ -1,6 +1,6 @@
 # 6: Mitsuzen HDI-10 (Left Arm)
 
-<div align="center"><img src="EXAPUNKS - Mitsuzen HDI-10 (241, 23, 6, 2022-12-05-19-20-25).gif" /></div>
+<div align="center"><img src="EXAPUNKS - Last Stop SNAXNET (33, 13, 2, 2023-05-19-15-02-24).gif" /></div>
 
 ## Instructions
 > Read a value from the nerve connected to your central nervous system (CNS) and relay it to the nerve connected to your arm (ARM), clamping the value so that it never goes below -120 or above 50. Repeat _ad infinitum_.
@@ -19,20 +19,17 @@ LINK 800
 MARK LOOP
 COPY #NERV X
 TEST X < -120
-TJMP CLAMP_DOWN
+TJMP LO
 TEST X > 50
-TJMP CLAMP_UP
+TJMP HI
 COPY X M
 JUMP LOOP
-
-MARK CLAMP_DOWN
+MARK LO
 COPY -120 M
 JUMP LOOP
-
-MARK CLAMP_UP
+MARK HI
 COPY 50 M
 JUMP LOOP
-
 ```
 
 ### [XB](XB.exa) (global)

@@ -1,6 +1,6 @@
 # 24: King's Ransom Online (US West Realm)
 
-<div align="center"><img src="EXAPUNKS - King's Ransom Online (110, 49, 39, 2022-12-05-19-35-52).gif" /></div>
+<div align="center"><img src="EXAPUNKS - Equity First Bank (446, 70, 6, 2023-05-19-15-23-20).gif" /></div>
 
 ## Instructions
 > ﻿Reset the ownership of all castles and sub-buildings to ‗P00000‗ (file 300), the player ID for unowned buildings.
@@ -11,72 +11,56 @@
 
 ## Solution
 
-### [XA](XA.exa) (local)
+### [XA](XA.exa) (global)
 ```asm
 GRAB 300
-COPY F T
-DROP
-VOID M
+COPY F X
+WIPE
 LINK 800
 
-COPY 800 X
-REPL OVERWRITE
-COPY 801 X
-REPL OVERWRITE
-COPY 802 X
-REPL OVERWRITE
-COPY 803 X
-REPL OVERWRITE
-COPY 804 X
-REPL OVERWRITE
-COPY 805 X
+COPY 5 T
+MARK REPL0
+REPL CON
+SUBI T 1 T
+TJMP REPL0
 
-MARK OVERWRITE
-LINK X
-COPY T X
+MARK CON
+ADDI T 800 T
+LINK T
+KILL
+KILL
+KILL
 
+COPY 2 T
+MARK NOOP
+SUBI T 1 T
+TJMP NOOP
+
+COPY 99 T
+MARK REPL1
+REPL GRAB
+SUBI T 1 T
+TJMP REPL1
 GRAB 200
 SEEK 2
 COPY X F
-
-MARK LOOP_SUB
-REPL REPLACE_SUB
-COPY F M
-COPY X M
-TEST EOF
-TJMP END
-JUMP LOOP_SUB
-
-MARK REPLACE_SUB
-GRAB M
-SEEK 2
-COPY M F
-TEST EOF
-FJMP LOOP_SUB
-
 MARK END
-```
-
-### [XB](XB.exa) (local)
-```asm
-LINK 800
-COPY 800 X
-
-MARK KILL
-LINK X
-KILL
-KILL
-KILL
 LINK -1
-ADDI X 1 X
-TEST X = 806
-FJMP KILL
-
 LINK -1
-COPY 1 M
+HALT
+
+MARK GRAB
+ADDI T 200 T
+GRAB T
+SEEK 5
+TEST EOF
+FJMP END
+SEEK -9999
+SEEK 2
+COPY X F
 ```
 
 #### Results
 | Cycles | Size | Activity |
 |--------|------|----------|
-| 110    | 49   | 39       |
+| 0      | 0    | 0        |

@@ -1,6 +1,6 @@
 # 5: Aberdeen (selenium_wolf)
 
-<div align="center"><img src="EXAPUNKS - Aberdeen (2022-12-05-19-40-00).gif" /></div>
+<div align="center"><img src="EXAPUNKS - TEC EXA-Blaster™ Modem (970, 58, 26, 2023-05-19-15-38-50).gif" /></div>
 
 ## Instructions
 > To win this battle you must occupy a majority of the hosts for as long as possible. You occupy a host if you have more EXAs in it than your opponent.
@@ -15,45 +15,76 @@
 
 ## Solution
 
-### [XB](XB.exa) (global)
+### [XA](XA.exa) (global)
 ```asm
 LINK 800
 LINK 801
-
-MARK DUPE_LOOP
-REPL DUPE
-JUMP DUPE_LOOP
-
-MARK DUPE
-LINK 800
-LINK 800
-LINK -1
-REPL NUKE
-LINK -1
-LINK 801
-JUMP DUPE
-
-MARK NUKE
-COPY 1 #NUKE
+LINK 799
+TEST M = 1
 ```
 
 ### [XC](XC.exa) (global)
 ```asm
 LINK 800
 LINK 802
-
-MARK DUPE_LOOP
-REPL DUPE
-JUMP DUPE_LOOP
-
-MARK DUPE
 LINK 800
-LINK 800
-@REP 5
-REPL IDLE
-@END
+LINK 799
+TEST M = 1
+```
 
-MARK IDLE
-JUMP IDLE
+### [XB](XB.exa) (global)
+```asm
+LINK 800
+MARK REP
+REPL NUKE
+JUMP REP
+MARK NUKE
+LINK 800
+COPY 1 #NUKE
+```
+
+### [XD](XD.exa) (global)
+```asm
+LINK 800
+LINK 802
+TEST M = 1
+```
+
+### [XE](XE.exa) (global)
+```asm
+LINK 800
+LINK 802
+TEST M = 1
+```
+
+### [XF](XF.exa) (global)
+```asm
+LINK 800
+LINK 801
+LINK 800
+TEST M = 1
+```
+
+### [XG](XG.exa) (global)
+```asm
+LINK 800
+LINK 801
+LINK 800
+TEST M = 1
+```
+
+### [XH](XH.exa) (global)
+```asm
+LINK 800
+LINK 801
+TEST M = 1
+```
+
+### [XI](XI.exa) (global)
+```asm
+LINK 800
+LINK 802
+LINK 800
+TEST M = 1
 ```
 

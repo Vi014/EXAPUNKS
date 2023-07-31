@@ -1,6 +1,6 @@
 # 33: TEC EXA-Blaster Modem (Pager Network)
 
-<div align="center"><img src="EXAPUNKS - TEC EXA-Blaster™ Modem (638, 62, 29, 2022-12-05-19-41-45).gif" /></div>
+<div align="center"><img src="EXAPUNKS - Motor Vehicle Administration (653, 80, 7, 2023-05-19-15-41-01).gif" /></div>
 
 ## Instructions
 > Connect to each pager and copy EMBER-2's message (file 300) to the screen (#DATA). Then activate all of the pagers at exactly the same time by writing a value to each #PAGE register in the same cycle.
@@ -11,112 +11,80 @@
 
 ## Solution
 
-### [XA](XA.exa) (local)
+### [XA](XA.exa) (global)
 ```asm
-; SYNC ALL EXA TO PAGE
-; AT THE SAME TIME
-; KINDA TRICKY, HAD
-; TO COUNT CYCLES
-; AND MAKES SURE TO USE
-; AN EVEN # OF INSTRUTI.
-
-; CLOCK OFFSET
-COPY M X ; 211 / 253
-
-; START DIALS
 GRAB 301
 LINK 800
-
 MARK DIAL
-@REP 11
-COPY F #DIAL
-@END
-REPL PAGER
-
-; WAIT ------------
-VOID M
 COPY -1 #DIAL
-
-MODE ; <- GLOBAL
-SUBI X M X ; 30 / 36
-MODE ; <- LOCAL
-
+COPY 11 T
+MARK LOOP
+COPY F #DIAL
+SUBI T 1 T
+TJMP LOOP
+COPY 1 M
+TEST M = 1
 TEST EOF
 FJMP DIAL
 
-; GO BACK, TELL FINISH
-WIPE
-GRAB 300
-LINK -1
-KILL
-HALT
+COPY 2 M
+SEEK -9999
 
-MARK PAGER
-GRAB 300
-LINK 800
-
-MARK COPY_DATA
-COPY F #DATA
-NOOP ; EVEN # OF CYCLES
-TEST EOF
-FJMP COPY_DATA
-
-LINK -1
-DROP
-COPY 1 M
-
-LINK 800
-
-; PRECISE CYCLE WAIT
-COPY X T
-MARK WAIT_CYCLE
+MARK DIAL2
+COPY -1 #DIAL
+COPY 11 T
+MARK LOOP2
+COPY F #DIAL
 SUBI T 1 T
-TJMP WAIT_CYCLE
-
-COPY 1 #PAGE
+TJMP LOOP2
+NOOP
+COPY 1 M
+TEST EOF
+FJMP DIAL2
+WIPE
 ```
 
-### [XB](XB.exa) (local)
+### [XB](XB.exa) (global)
 ```asm
-; I CALCULATED THE MAGIC
-; NUMBERS BY FINDING THE
-; CORRECT ONE FOR 2 TEST
-; THEN COMPARE THEM
-; AND FIGURE OUT A
-; FORMULA
-
-; COUNT WORDS & BROADCAS
 GRAB 300
-
-MARK COUNT
-SEEK 1
-ADDI X 1 X
-TEST EOF
-FJMP COUNT
-
 LINK 800
-DROP
+MARK WRITE
+TEST M = 1
+FJMP END
+LINK 800
+MARK LOOP
+COPY F #DATA
+TEST EOF
+FJMP LOOP
 LINK -1
+COPY 1 M
+SEEK -9999
+JUMP WRITE
 
-; CALCULATE STARTING
-; OFFSET FOR CYCLES
-MULI X 14 T
-ADDI 85 T M
+MARK END
+WIPE
+COPY 141 X
+MARK REPL
+TEST M = 1
+REPL ACTIV
+SUBI X 20 X
+TEST X = -19
+FJMP REPL
+HALT
 
-MODE ; <- GLOBAL
-
-; OFFSET TO REMOVE
-; ON EACH EXA
-MULI X 2 X
-ADDI 12 X X
-
-; BROADCAST OFFSET
-MARK BROADCAST
-COPY X M
-JUMP BROADCAST
+MARK ACTIV
+;SUBI X 1 T
+COPY X T
+;DIVI X 19 X
+LINK 800
+MARK WAIT
+SUBI T 1 T
+;ADDI T 1 T
+TJMP WAIT
+COPY 1 #PAGE
 ```
 
 #### Results
 | Cycles | Size | Activity |
 |--------|------|----------|
-| 638    | 62   | 29       |
+| 970    | 58   | 26       |

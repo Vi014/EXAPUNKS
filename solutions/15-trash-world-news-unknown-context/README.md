@@ -1,6 +1,6 @@
 # 15: Trash World News (Unknown Context)
 
-<div align="center"><img src="EXAPUNKS - TRASH WORLD NEWS (568, 26, 4, 2022-12-05-19-22-30).gif" /></div>
+<div align="center"><img src="EXAPUNKS - TEC Redshift™ (11902, 37, 4, 2023-05-19-15-06-31).gif" /></div>
 
 ## Instructions
 > ï»¿Find and replace the keywords in the target message (file 212) as directed by EMBER-2.
@@ -11,42 +11,76 @@
 
 ## Solution
 
-### [XA](XA.exa) (global)
-```asm
-GRAB 300
-MARK LOOP
-COPY F M
-COPY F M
-TEST EOF
-FJMP LOOP
-COPY 666 M
-```
-
 ### [XB](XB.exa) (global)
 ```asm
 LINK 800
 LINK 799
 GRAB 212
-MARK REPLACE
 COPY M X
-TEST X = 666
-TJMP END
-SEEK -9999
-MARK SEARCH
+
+MARK READFILE
 TEST F = X
-FJMP SEARCH
+FJMP TESTEND
+
+COPY 1 M
 SEEK -1
 COPY M F
-JUMP REPLACE
+COPY M X
+TEST EOF
+TJMP NEXTWORD
+FJMP READFILE
 
-MARK END
-DROP
-LINK -1
+MARK TESTEND
+TEST EOF
+TJMP NEXTWORD
+FJMP READFILE
+
+MARK NEXTWORD
+COPY 2 M
+COPY M X
+SEEK -9999
+TEST X = 1
+FJMP READFILE
+
+HALT
+```
+
+### [XC](XC.exa) (global)
+```asm
+LINK 800
 GRAB 200
 LINK 800
+HALT
+```
+
+### [XA](XA.exa) (global)
+```asm
+GRAB 300
+COPY F M
+
+MARK WAIT
+TEST M = 1
+FJMP GETNEWWORD
+
+COPY F M
+SEEK -2
+COPY F M
+JUMP WAIT
+
+MARK GETNEWWORD
+SEEK 1
+TEST EOF
+TJMP END
+
+COPY F M
+JUMP WAIT
+
+MARK END
+COPY 1 M
+HALT
 ```
 
 #### Results
 | Cycles | Size | Activity |
 |--------|------|----------|
-| 568    | 26   | 4        |
+| 1920   | 47   | 4        |

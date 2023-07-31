@@ -1,6 +1,6 @@
 # 28: Last Stop Snaxnet (Warehouse 27)
 
-<div align="center"><img src="EXAPUNKS - Last Stop SNAXNET (301, 98, 30, 2022-12-05-19-37-37).gif" /></div>
+<div align="center"><img src="EXAPUNKS - Aberdeen (selenium_wolf, 2023-05-19-15-27-46).gif" /></div>
 
 ## Instructions
 > An array of five Zippe-type gas centrifuges, ZGC0 through ZGC4, are connected in a cascade configuration.
@@ -9,105 +9,105 @@
 
 ## Solution
 
-### [XB](XB.exa) (global)
-```asm
-LINK 800
-LINK 798
-
-MARK FWD_LISTENS
-COPY M X
-COPY X T
-FJMP END
-
-MARK FWD
-LINK 800
-SUBI T 1 T
-TJMP FWD
-COPY 0 #POWR
-COPY 2 M
-COPY X T
-
-MARK BWD
-LINK -1
-SUBI T 1 T
-TJMP BWD
-JUMP FWD_LISTENS
-
-MARK END
-COPY 0 #POWR
-COPY 2 M
-JUMP FWD_LISTENS
-```
-
-### [XD](XD.exa) (local)
-```asm
-LINK 800
-LINK 799
-
-MAKE
-
-MARK START
-COPY -1 X
-
-MARK COUNTER
-TEST X = 4
-TJMP SEND
-
-ADDI X 1 X
-TEST M = 1
-FJMP COUNTER
-
-; SAVE COUNTER
-COPY X F
-JUMP COUNTER
-
-MARK SEND
-SEEK -1
-MODE
-COPY F M
-VOID M
-MODE
-COPY 2 M
-JUMP START
-```
-
 ### [XA](XA.exa) (local)
 ```asm
 LINK 800
 LINK 799
-
-; UNROLL FOR BETTER CYCL
+MARK START
 @REP 5
-MARK TEST@{0,1}
-TEST #ZGC@{0,1} > X
-TJMP COPY@{0,1}
+TEST #ZGC@{0,1} = 0
+FJMP NOTYET
+@END
+COPY -1 M
+COPY -1 M
+HALT
+MARK NOTYET
+MAKE
+@REP 5
+COPY @{1,1} F
+COPY #ZGC@{0,1} F
+@END
+SEEK -9999
+COPY F M
+SEEK -1
+COPY F M
+COPY F X
+MARK FIND
+TEST EOF
+TJMP SMTH
+SEEK 1
+TEST F > X
+TJMP COPY
+JUMP FIND
+MARK COPY
+SEEK -2
+COPY F M
+SEEK -1
+COPY F M
+COPY F X
+JUMP FIND
+MARK SMTH
 COPY 0 M
-@END
-
-MARK TEST5
-TEST X = 0
-TJMP KILL
-VOID M
-COPY 0 X
-JUMP TEST0
-
-@REP 5
-MARK COPY@{0,1}
-COPY #ZGC@{0,1} X
-COPY 1 M
-JUMP TEST@{1,1}
-@END
-
-MARK KILL
-KILL
-GRAB 400
+COPY 0 M
+SEEK -9999
+MARK REM
+SEEK 1
+TEST F = X
+FJMP REM
+SEEK -2
+VOID F
+VOID F
 WIPE
-LINK -1
+JUMP START
+MARK ALLDONE
+```
+
+### [XB](XB.exa) (local)
+```asm
+LINK 800
+LINK 799
+MARK LOOP
+TEST M < 1
+TJMP NEXT
+COPY M X
+JUMP LOOP
+MARK NEXT
+TEST M = -1
+MODE
+TJMP END
+COPY X M
+MODE
+JUMP LOOP
+MARK END
+COPY 0 M
+```
+
+### [XC](XC.exa) (global)
+```asm
+LINK 800
 LINK 798
-KILL
+MARK WAIT
+COPY M X
+TEST X = 0
+TJMP END
+SUBI X 1 T
+MARK FIND
+FJMP DISABLE
+LINK 800
+SUBI T 1 T
+JUMP FIND
+MARK DISABLE
+COPY 0 #POWR
+SUBI X 1 T
+MARK BACK
+FJMP WAIT
+LINK -1
+SUBI T 1 T
+JUMP BACK
+MARK END
 ```
 
 #### Results
 | Cycles | Size | Activity |
 |--------|------|----------|
-| 301    | 98   | 30       |
+| 421    | 98   | 26       |

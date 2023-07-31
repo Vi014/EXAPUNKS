@@ -1,6 +1,6 @@
 # 22: Alliance Power and Light (Streetsmarts GIS Database)
 
-<div align="center"><img src="EXAPUNKS - Alliance Power and Light (44, 45, 44, 2022-12-05-19-35-09).gif" /></div>
+<div align="center"><img src="EXAPUNKS - Xtreme League Baseball (3916, 53, 1, 2023-05-19-15-20-07).gif" /></div>
 
 ## Instructions
 > Locate the two hosts with the specified hostnames (file 300), which correspond to the target power grid substations. When you've found them, cut the power by writing a value of 0 to #POWR.
@@ -11,76 +11,44 @@
 
 ### [XA](XA.exa) (global)
 ```asm
-GRAB 300
-COPY F X
-DROP
-
-LINK 800
-
 LINK 800
 LINK 800
-
-
-MARK DUPE
-REPL CHECK
-LINK 802
-JUMP DUPE
-
-
-MARK CUT_POWER
-COPY M #POWR
-HALT
-
-MARK WALK
-LINK 801
-
-MARK CHECK
-HOST T
-TEST X = T
-TJMP CUT_POWER
-JUMP WALK
-```
-
-### [XB](XB.exa) (global)
-```asm
+LINK 800
+MARK EXPL
+COPY 5 T
+REPL ASDF
 NOOP
 NOOP
-NOOP
-
-GRAB 300
-SEEK 1
-COPY F X
-DROP
-
-LINK 800
-
-LINK 800
-LINK 800
-
-
-MARK DUPE
-REPL CHECK
-LINK 802
-JUMP DUPE
-
-
-MARK CUT_POWER
-COPY 0 M
 COPY 0 #POWR
-HALT
-
-
-MARK WALK
+MARK ASDF
+SUBI T 1 T
+FJMP AMOGUS
+LINK 802
+REPL ASDF
+NOOP
+NOOP
+COPY 0 #POWR
+MARK AMOGUS
 LINK 801
-
-MARK CHECK
-HOST T
-TEST X = T
-TJMP CUT_POWER
-JUMP WALK
+COPY 5 T
+REPL ASDF2
+NOOP
+NOOP
+COPY 0 #POWR
+MARK ASDF2
+SUBI T 1 T
+FJMP AMOGUS2
+LINK 800
+REPL ASDF2
+NOOP
+NOOP
+COPY 0 #POWR
+MARK AMOGUS2
+LINK 801
+JUMP EXPL
 ```
 
 #### Results
 | Cycles | Size | Activity |
 |--------|------|----------|
-| 44     | 45   | 44       |
+| 0      | 0    | 0        |

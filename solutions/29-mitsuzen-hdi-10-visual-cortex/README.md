@@ -1,6 +1,6 @@
 # 29: Mitsuzen HDI-10 (Visual Cortex)
 
-<div align="center"><img src="EXAPUNKS - Mitsuzen HDI-10 (1878, 41, 359, 2022-12-05-19-37-59).gif" /></div>
+<div align="center"><img src="EXAPUNKS - U.S. Government (2042, 132, 87, 2023-05-19-15-28-58).gif" /></div>
 
 ## Instructions
 > Read a value from each of the optic nerves present and write the correct value to the nerve that runs deeper into your visual cortex (V-CTX). To determine the value that should be written, count the number of values read that are greater than -55, multiply that count by 5, and then subtract 75. Repeat _ad infinitum_.
@@ -11,73 +11,72 @@
 
 ## Solution
 
+### [XA](XA.exa) (global)
+```asm
+LINK 800
+REPL R0
+REPL R1
+JUMP LOOP
+MARK R0
+LINK 1
+REPL R2
+REPL R3
+JUMP LOOP
+MARK R1
+LINK -3
+REPL R4
+JUMP LOOP
+MARK R2
+LINK 1
+REPL R5
+JUMP LOOP
+MARK R3
+LINK -3
+JUMP LOOP
+MARK R4
+LINK -3
+REPL R6
+JUMP LOOP
+MARK R5
+LINK -3
+REPL R7
+JUMP LOOP
+MARK R6
+LINK 1
+JUMP LOOP
+MARK R7
+LINK -3
+JUMP LOOP
+MARK LOOP
+COPY 3 T
+MARK WAIT
+SUBI T 1 T
+TJMP WAIT
+MARK LOOP2
+TEST #NERV > -55
+MULI T 5 M
+COPY 4 T
+MARK WAIT2
+SUBI T 1 T
+TJMP WAIT2
+JUMP LOOP2
+```
+
 ### [XB](XB.exa) (global)
 ```asm
 LINK 800
-
-MARK START
-COPY 0 X
-JUMP TEST
-
+LINK 1
+LINK 3
 MARK LOOP
-TEST M = -2
-TJMP END
-LINK M
-
-MARK TEST
-TEST #NERV > -55
-FJMP LOOP
-
-MARK COUNT
-ADDI X 1 X
-JUMP LOOP
-
-
-MARK END
-LINK 3
-LINK 3
-
-MULI X 5 X
+@REP 9
+ADDI X M X
+@END
 SUBI X 75 #NERV
-
-LINK -3
-LINK -1
-JUMP START
-```
-
-### [XC](XC.exa) (global)
-```asm
-MARK LOOP
-COPY 1 M
-COPY 1 M
-
-COPY 1 M
-COPY 1 M
-
-COPY -3 M
-COPY -3 M
-
-COPY -3 M
-COPY -3 M
-
-COPY -1 M
-COPY -1 M
-
-COPY -1 M
-COPY -1 M
-
-COPY 3 M
-COPY 3 M
-
-COPY 1 M
-COPY 1 M
-
-COPY -2 M
-
+COPY 0 X
 JUMP LOOP
 ```
 
 #### Results
 | Cycles | Size | Activity |
 |--------|------|----------|
-| 1878   | 41   | 359      |
+| 402    | 63   | 12       |

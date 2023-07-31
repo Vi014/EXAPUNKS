@@ -1,6 +1,6 @@
 # 19: Emerson's Guide (Streetsmarts GIS Database)
 
-<div align="center"><img src="EXAPUNKS - Emerson's Guide (53, 52, 6, 2022-12-05-19-32-52).gif" /></div>
+<div align="center"><img src="EXAPUNKS - Mitsuzen HDI-10 (274, 51, 601, 2023-05-19-15-14-32).gif" /></div>
 
 ## Instructions
 > Each host contains a list of restaurants and their ratings, from one to five stars (file 200). Locate the entry that corresponds to the Last Stop on Eddy Street and change its rating from one to five stars.
@@ -14,65 +14,42 @@
 ### [XA](XA.exa) (global)
 ```asm
 GRAB 300
-SEEK 1
-
 LINK 800
-
-; FIGURE OUT E/W & MOVE
-; COULD BE ANOTHER EXA
+SEEK 1
 COPY F X
-
+MARK LONGITUDE
 TEST X = 0
-TJMP LOCATE_NORTH_SOUTH
-TEST X < 0
-TJMP WEST
-COPY X T
-COPY 801 X
-JUMP LOOP_EAST_WEST
-MARK WEST
-MULI X -1 T
-COPY 803 X
-
-MARK LOOP_EAST_WEST
-LINK X
-SUBI T 1 T
-FJMP LOCATE_NORTH_SOUTH
-JUMP LOOP_EAST_WEST
-
-; FIGURE OUT N/S & MOVE
-MARK LOCATE_NORTH_SOUTH
+TJMP LATITUDE
+LINK 801
+SUBI X 1 X
+JUMP LONGITUDE
+MARK LATITUDE
 COPY F X
-
-TEST X = 0
-TJMP CHANGE_STARS
 TEST X < 0
-TJMP SOUTH
-COPY X T
-COPY 800 X
-JUMP LOOP_NORTH_SOUTH
-MARK SOUTH
-MULI X -1 T
-COPY 802 X
-
-MARK LOOP_NORTH_SOUTH
-LINK X
-SUBI T 1 T
-FJMP CHANGE_STARS
-JUMP LOOP_NORTH_SOUTH
-
-MARK CHANGE_STARS
-SEEK -9999
+TJMP NEG
+MARK POS
+TEST X = 0
+TJMP END
+LINK 800
+SUBI X 1 X
+JUMP POS
+MARK NEG
+TEST X = 0
+TJMP END
+LINK 802
+ADDI X 1 X
+JUMP NEG
+MARK END
+SEEK -3
 COPY F X
 WIPE
 GRAB 200
-
-MARK CHECK_NAME
-TEST X = F
-TJMP ADD_STARS
+MARK FIND
+TEST F = X
+TJMP REPL
 SEEK 5
-JUMP CHECK_NAME
-
-MARK ADD_STARS
+JUMP FIND
+MARK REPL
 COPY F X
 COPY X F
 COPY X F
@@ -83,4 +60,4 @@ COPY X F
 #### Results
 | Cycles | Size | Activity |
 |--------|------|----------|
-| 53     | 52   | 6        |
+| 52     | 42   | 6        |

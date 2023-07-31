@@ -1,6 +1,6 @@
 # 2: Valhalla (=Plastered)
 
-<div align="center"><img src="EXAPUNKS - Valhalla (2022-12-05-19-33-03).gif" /></div>
+<div align="center"><img src="EXAPUNKS - Sawayama WonderDisc (7320, 53, 63, 2023-05-19-15-15-52).gif" /></div>
 
 ## Instructions
 > To win this battle you must control a majority of the hosts for as long as possible. 
@@ -18,71 +18,101 @@
 ### [XA](XA.exa) (global)
 ```asm
 LINK 800
-
-COPY 1 #CTRL
 LINK -1
+MARK ASDF
+COPY 1 #CTRL
+JUMP ASDF
+```
 
-MARK FORWARD_FIRST
+### [XB](XB.exa) (global)
+```asm
+LINK 800
+MARK ASDF
 COPY 1 #CTRL
-LINK 800
-;COPY 1 #CTRL
-LINK 800
-COPY 1 #CTRL
-LINK 800
-COPY 1 #CTRL
-LINK 800
+JUMP ASDF
+```
 
-KILL
+### [XC](XC.exa) (global)
+```asm
+LINK 800
+LINK -1
+MARK ASDF
+COPY 1 #CTRL
+JUMP ASDF
+```
 
-COPY 1 #CTRL
+### [XD](XD.exa) (global)
+```asm
 LINK 800
-COPY 1 #CTRL
 LINK 800
-COPY 1 #CTRL
 LINK 800
+MARK ASDF
 COPY 1 #CTRL
-LINK 800
+JUMP ASDF
+```
 
-JUMP BACKWARD
+### [XE](XE.exa) (global)
+```asm
+LINK 800
+LINK 800
+LINK 800
+LINK 800
+MARK ASDF
+COPY 1 #CTRL
+JUMP ASDF
+```
 
-MARK FORWARD
+### [XF](XF.exa) (global)
+```asm
+LINK 800
+LINK 800
+LINK 800
+LINK 800
+LINK 800
+MARK ASDF
 COPY 1 #CTRL
-LINK 800
-;COPY 1 #CTRL
-LINK 800
-COPY 1 #CTRL
-LINK 800
-COPY 1 #CTRL
-LINK 800
-COPY 1 #CTRL
-LINK 800
-COPY 1 #CTRL
-LINK 800
-COPY 1 #CTRL
-LINK 800
-COPY 1 #CTRL
-LINK 800
+JUMP ASDF
+```
 
+### [XG](XG.exa) (global)
+```asm
+LINK 800
+LINK 800
+LINK 800
+LINK 800
+LINK 800
+LINK 800
+MARK ASDF
+COPY 1 #CTRL
+JUMP ASDF
+```
 
-MARK BACKWARD
+### [XH](XH.exa) (global)
+```asm
+LINK 800
+LINK 800
+LINK 800
+LINK 800
+LINK 800
+LINK 800
+LINK 800
+MARK ASDF
 COPY 1 #CTRL
-LINK -1
-COPY 1 #CTRL
-LINK -1
-COPY 1 #CTRL
-LINK -1
-COPY 1 #CTRL
-LINK -1
-COPY 1 #CTRL
-LINK -1
-COPY 1 #CTRL
-LINK -1
-COPY 1 #CTRL
-LINK -1
-COPY 1 #CTRL
-LINK -1
-COPY 1 #CTRL
+JUMP ASDF
+```
 
-JUMP FORWARD
+### [XI](XI.exa) (global)
+```asm
+LINK 800
+LINK 800
+LINK 800
+LINK 800
+LINK 800
+LINK 800
+LINK 800
+LINK 800
+MARK ASDF
+COPY 1 #CTRL
+JUMP ASDF
 ```
 

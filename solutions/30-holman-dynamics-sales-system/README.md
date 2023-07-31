@@ -1,6 +1,6 @@
 # 30: Holman Dynamics (Sales System)
 
-<div align="center"><img src="EXAPUNKS - Holman Dynamics (4459, 119, 7, 2022-12-05-19-38-24).gif" /></div>
+<div align="center"><img src="EXAPUNKS - UNKNOWN NETWORK 2 (429, 32, 56, 2023-05-19-15-38-04).gif" /></div>
 
 ## Instructions
 > Create a file in your host containing the contiguous 16-value sequence from the garbage file (file 199) that is a valid credit card number. There will be exactly one such sequence.
@@ -16,93 +16,93 @@ LINK 802
 LINK 799
 GRAB 199
 
-; FIX EDGE CASE VERY END
-SEEK 9999
-COPY -9999 F
-SEEK -9999
+VOID M
 
-; FIND 16 SEQ
-MARK RESET
+MARK INIT1
+SEEK -15
+MARK INIT2
 COPY 0 X
-MARK LOOP
-ADDI X 1 X
-TEST F < 0
-TJMP RESET
 
-TEST X > 15
+MARK LOOP
+TEST F = -9999
+TJMP INIT2
+ADDI X 1 X
+TEST X = 16
 FJMP LOOP
 
-; FOUND
 SEEK -16
-COPY 0 X
-COPY 0 T
 
-@REP 8
+COPY 16 T
+MARK LOOP2
 COPY F M
-ADDI M T T
-SEEK 1
-@END
+SUBI T 1 T
+TJMP LOOP2
 
-SEEK -15
-@REP 8
-ADDI T F T
-SEEK 1
-@END
-
-SWIZ T 0001 T
-FJMP VALID
-
-; RESET COUNTER TO -1
-SEEK -1
-COPY 15 X
-JUMP LOOP
-
-
-MARK VALID
-MODE
-REPL DUPE
-SEEK -17
-
-@REP 16
+TEST M = -1
+TJMP INIT1
+SEEK -16
+COPY 16 T
+MARK LOOP3
 COPY F M
-@END
-
-SEEK 9999
-SEEK -1
-VOID F
-
-HALT
-
-MARK DUPE
-MAKE
-@REP 16
-COPY M F
-@END
-
-LINK -1
-LINK -1
-LINK -1
-KILL
+SUBI T 1 T
+TJMP LOOP3
 ```
 
 ### [XB](XB.exa) (global)
 ```asm
-; TRANSFORM ODD #
-JUMP LOOP
+MAKE
 
-MARK GREATER
-SUBI X 9 M
+MARK START
+WIPE
+MAKE
+COPY -1 M
+COPY 16 T
 
 MARK LOOP
-MULI M 2 X
-TEST X > 9
-TJMP GREATER
+COPY M F
+SUBI T 1 T
+TJMP LOOP
 
-COPY X M
-JUMP LOOP
+SEEK -9999
+
+MARK LOOP2
+MULI F 2 X
+TEST X > 9
+TJMP SUBT
+MARK BACK
+SEEK -1
+COPY X F
+SEEK 1
+TEST EOF
+FJMP LOOP2
+
+COPY 0 X
+SEEK -9999
+
+MARK LOOP3
+ADDI X F X
+TEST EOF
+FJMP LOOP3
+
+SWIZ X 1 X
+TEST X = 0
+FJMP START
+COPY 1 M
+COPY 16 T
+WIPE
+MAKE
+MARK LOOP4
+COPY M F
+SUBI T 1 T
+TJMP LOOP4
+HALT
+
+MARK SUBT
+SUBI X 9 X
+JUMP BACK
 ```
 
 #### Results
 | Cycles | Size | Activity |
 |--------|------|----------|
-| 4459   | 119  | 7        |
+| 12837  | 71   | 3        |

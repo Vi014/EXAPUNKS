@@ -1,6 +1,6 @@
 # 20: Mitsuzen HDI-10 (Left Hand)
 
-<div align="center"><img src="EXAPUNKS - Mitsuzen HDI-10 (69, 54, 19, 2022-12-05-19-33-17).gif" /></div>
+<div align="center"><img src="EXAPUNKS - Alliance Power and Light (36, 50, 20, 2023-05-19-15-18-42).gif" /></div>
 
 ## Instructions
 > There are three nerve signals that need to be relayed: muscle control (M), which runs from your central nervous system (CNS) to your hand (HND), and heat (H) and pressure (P), which run the other direction.
@@ -13,79 +13,103 @@
 
 ## Solution
 
-### [XC](XC.exa) (global)
+### [MC](MC.exa) (global)
 ```asm
 LINK 800
-
-
-COPY 2 T
-COPY 3 X
-REPL GO_RELAY
-
-COPY -3 X
-REPL GO_READ
-
-COPY 3 X
-COPY 1 T
-REPL GO_RELAY
-
-COPY -3 X
-REPL GO_READ
-
-COPY 0 T
-NOOP
-REPL GO_RELAY
-
-COPY 3 X
-
-
-MARK GO_READ
-MAKE
-SUBI 2 T F
-LINK X
-MARK GO_READ_LOOP
-LINK X
-FJMP READ_START
-SUBI T 1 T
-JUMP GO_READ_LOOP
-
-MARK GO_RELAY
-MAKE
-SUBI 2 T F
-LINK X
-MARK GO_RELAY_LOOP
-LINK X
-FJMP RELAY_START
-SUBI T 1 T
-JUMP GO_RELAY_LOOP
-
-
-MARK RELAY_START
-SEEK -1
-COPY F T
-MARK RELAY_LOOP
-FJMP RELAY
-SUBI T 1 T
-JUMP RELAY_LOOP
-MARK RELAY
+LINK -3
+LINK -3
+MARK LOOP
 COPY #NERV M
-JUMP RELAY
+NOOP
+NOOP
+NOOP
+NOOP
+JUMP LOOP
+```
 
-
-MARK READ_START
-SEEK -1
-COPY F T
-MARK READ_LOOP
-FJMP READ
-SUBI T 1 T
-JUMP READ_LOOP
-MARK READ
+### [HC](HC.exa) (global)
+```asm
+LINK 800
+LINK -3
+LINK -3
+LINK -3
+NOOP
+MARK LOOP
+NOOP
 COPY M #NERV
 NOOP
-JUMP READ
+NOOP
+NOOP
+JUMP LOOP
+```
+
+### [PC](PC.exa) (global)
+```asm
+LINK 800
+LINK -3
+LINK -3
+LINK -3
+LINK -3
+NOOP
+MARK LOOP
+NOOP
+NOOP
+NOOP
+COPY M #NERV
+JUMP LOOP
+```
+
+### [MH](MH.exa) (global)
+```asm
+LINK 800
+LINK 3
+LINK 3
+MARK LOOP
+COPY M #NERV
+NOOP
+NOOP
+NOOP
+NOOP
+JUMP LOOP
+```
+
+### [HH](HH.exa) (global)
+```asm
+LINK 800
+LINK 3
+LINK 3
+LINK 3
+@REP 4
+NOOP
+@END
+MARK LOOP
+NOOP
+COPY #NERV M
+NOOP
+NOOP
+NOOP
+JUMP LOOP
+```
+
+### [PH](PH.exa) (global)
+```asm
+LINK 800
+LINK 3
+LINK 3
+LINK 3
+LINK 3
+@REP 2
+NOOP
+@END
+MARK LOOP
+NOOP
+NOOP
+NOOP
+COPY #NERV M
+JUMP LOOP
 ```
 
 #### Results
 | Cycles | Size | Activity |
 |--------|------|----------|
-| 69     | 54   | 19       |
+| 0      | 0    | 0        |

@@ -1,6 +1,6 @@
 # 10: Unknown Network 1 (Unknown Context)
 
-<div align="center"><img src="EXAPUNKS - UNKNOWN NETWORK 1 (31, 22, 27, 2022-12-05-19-21-17).gif" /></div>
+<div align="center"><img src="EXAPUNKS - UC Berkeley (424, 36, 7, 2023-05-19-15-03-18).gif" /></div>
 
 ## Instructions
 > Find file 276 in the network and bring it back to your host.
@@ -11,34 +11,32 @@
 
 ### [XA](XA.exa) (global)
 ```asm
-COPY 4 X
-
-MARK A
 LINK 800
-SUBI X 1 X
-TEST X = 0
-TJMP END
-REPL A
-JUMP B
-
-MARK B
+MARK REPLICATE
+ADDI X 1 X
+REPL M800
+REPL M801
+HALT
+MARK M800
+LINK 800
+JUMP TEST
+MARK M801
 LINK 801
-SUBI X 1 X
-TEST X = 0
-TJMP END
-REPL B
-JUMP A
-
-MARK END
+MARK TEST
+TEST X = 3
+TJMP GRAB
+FJMP REPLICATE
+MARK GRAB
 KILL
 GRAB 276
 LINK -1
 LINK -1
 LINK -1
 LINK -1
+HALT
 ```
 
 #### Results
 | Cycles | Size | Activity |
 |--------|------|----------|
-| 31     | 22   | 27       |
+| 29     | 23   | 27       |

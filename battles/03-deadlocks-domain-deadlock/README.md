@@ -1,6 +1,6 @@
 # 3: Deadlock's Domain (Deadlock)
 
-<div align="center"><img src="EXAPUNKS - Deadlock's Domain (2022-12-05-19-35-20).gif" /></div>
+<div align="center"><img src="EXAPUNKS - King's Ransom Online (335, 38, 25, 2023-05-19-15-21-09).gif" /></div>
 
 ## Instructions
 > To win this battle you must grab files as they spawn in the central hosts and bring them back to your host. 
@@ -17,34 +17,37 @@
 
 ### [XA](XA.exa) (global)
 ```asm
-MARK BEGIN
-COPY 800 X
-REPL START
-COPY 801 X
-REPL START
-COPY 802 X
-JUMP BEGIN
-
-MARK START
+MARK ASDF
 LINK 800
-LINK X
-KILL
-LINK 799
-KILL
-LINK X
-KILL
+LINK 800
 GRAB #FILE
 LINK -1
 LINK -1
 DROP
+JUMP ASDF
+```
 
-MARK LOOP
+### [XB](XB.exa) (global)
+```asm
+MARK ASDF
 LINK 800
-LINK X
+LINK 801
 GRAB #FILE
 LINK -1
 LINK -1
 DROP
-JUMP LOOP
+JUMP ASDF
+```
+
+### [XC](XC.exa) (global)
+```asm
+MARK ASDF
+LINK 800
+LINK 802
+GRAB #FILE
+LINK -1
+LINK -1
+DROP
+JUMP ASDF
 ```
 

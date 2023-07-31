@@ -1,6 +1,6 @@
 # 7: Last Stop Snaxnet (Factory 11)
 
-<div align="center"><img src="EXAPUNKS - Last Stop SNAXNET (31, 11, 2, 2022-12-05-19-20-41).gif" /></div>
+<div align="center"><img src="EXAPUNKS - Zebros Copies (102, 34, 4, 2023-05-19-15-02-37).gif" /></div>
 
 ## Instructions
 > ﻿Remove the keyword ‗PEANUTS‗ (file 300) from the Peanut Blast recipe (file 237).
@@ -17,14 +17,16 @@ DROP
 LINK 800
 LINK 800
 GRAB 237
-MARK LOOP
+MARK TEST
 TEST F = X
-FJMP LOOP
+FJMP TEST
 SEEK -1
 VOID F
+DROP
+WIPE
 ```
 
 #### Results
 | Cycles | Size | Activity |
 |--------|------|----------|
-| 31     | 11   | 2        |
+| 33     | 13   | 2        |

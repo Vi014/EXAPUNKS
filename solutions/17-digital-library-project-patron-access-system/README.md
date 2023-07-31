@@ -1,6 +1,6 @@
 # 17: Digital Library Project (Patron Access System)
 
-<div align="center"><img src="EXAPUNKS - Digital Library Project (1489, 50, 37, 2022-12-05-19-31-17).gif" /></div>
+<div align="center"><img src="EXAPUNKS - Emerson's Guide (52, 42, 6, 2023-05-19-15-14-12).gif" /></div>
 
 ## Instructions
 > Books are stored in the host corresponding to the first digit of their call number, while a book's file ID is 200 plus the last two digits of the call number. For example, book 512 would be stored in the host *500-599* as file 212.
@@ -13,76 +13,65 @@
 
 ## Solution
 
-### [XB](XB.exa) (global)
+### [XA](XA.exa) (global)
 ```asm
-@REP 3
-NOOP
-@END
-
-MARK BOOK
-MODE
-TEST MRD
-FJMP STOP
-
-MAKE
-REPL BOT
-COPY M T
-MODE
-COPY T M
-MODE
-COPY M T
-MODE
-COPY T M
-
-MARK COPY
-TEST MRD
-FJMP END
-COPY M F
-NOOP
-JUMP COPY
-
-MARK END
+MARK START
+GRAB 300
+SEEK M
+TEST EOF
+TJMP END
+COPY 0 M
+COPY F X
 DROP
-JUMP BOOK
-
-MARK BOT
-MODE
+SWIZ X 003 T
 LINK 800
-COPY M X
-
-MARK HOST
+MARK GO
 LINK 800
-SUBI X 1 X
-TEST X = 0
-FJMP HOST
-
-GRAB M
-MARK COPY_BOT
+SUBI T 1 T
+TJMP GO
+SWIZ X 021 T
+ADDI T 200 T
+GRAB T
+MARK COPYBOOK
 COPY F M
 TEST EOF
-FJMP COPY_BOT
-
-MARK STOP
+FJMP COPYBOOK
+DROP
+COPY 0 M
+SWIZ X 003 T
+MARK RETURN
+LINK -1
+SUBI T 1 T
+TJMP RETURN
+LINK -1
+JUMP START
+MARK END
+COPY 1 M
+HALT
 ```
 
-### [XA](XA.exa) (local)
+### [XB](XB.exa) (global)
 ```asm
-GRAB 300
-MARK BOOK
-TEST EOF
-TJMP STOP
-COPY F X
-
-SWIZ X 0003 M
-SWIZ X 0021 X
-ADDI X 200 M
-
-JUMP BOOK
-
-MARK STOP
+COPY 0 X
+MARK START
+COPY X M
+TEST M = 1
+TJMP END
+MAKE
+MARK FILECOPY
+COPY M T
+FJMP COPY
+COPY T F
+TJMP FILECOPY
+MARK COPY
+DROP
+ADDI X 1 X
+JUMP START
+MARK END
+HALT
 ```
 
 #### Results
 | Cycles | Size | Activity |
 |--------|------|----------|
-| 1489   | 50   | 37       |
+| 1312   | 50   | 74       |
