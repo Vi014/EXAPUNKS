@@ -18,7 +18,7 @@
 | [13: Equity First Bank (San Fancisco)](solutions/13-equity-first-bank-san-fancisco)                                              | 4007   | 34   | 10       |
 | [14: Mitsuzen HDI-10 (Heart)](solutions/14-mitsuzen-hdi-10-heart)                                                                | 107    | 35   | 7        |
 | [15: Trash World News (Unknown Context)](solutions/15-trash-world-news-unknown-context)                                          | 1920   | 47   | 4        |
-| [16: TEC Redshift (Development Kit)](solutions/16-tec-redshift-development-kit)                                                  | 11162  | 198  | 3        |
+| [16: TEC Redshift (Development Kit)](solutions/16-tec-redshift-development-kit)                                                  | 11902  | 37   | 4        |
 | [17: Digital Library Project (Patron Access System)](solutions/17-digital-library-project-patron-access-system)                  | 1312   | 50   | 74       |
 | [18: TEC EXA-Blaster Modem (Radio Stations)](solutions/18-tec-exa-blaster-modem-radio-stations)                                  | 1513   | 68   | 17       |
 | [19: Emerson's Guide (Streetsmarts GIS Database)](solutions/19-emersons-guide-streetsmarts-gis-database)                         | 52     | 42   | 6        |
