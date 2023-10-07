@@ -1,6 +1,6 @@
 # 21: Sawayama Wonderdisc (Drive Controller)
 
-<div align="center"><img src="EXAPUNKS - Sawayama WonderDisc (7320, 53, 63, 2023-07-31-12-23-05).gif" /></div>
+<div align="center"><img src="EXAPUNKS - Sawayama WonderDisc (7320, 53, 63, 2023-10-07-23-59-14).gif" /></div>
 
 ## Instructions
 > Modify your WonderDisc, which normally only plays SSEA region games, to play games from any region.

@@ -1,0 +1,282 @@
+# 3: Cybermyth Studios (Accounting System)
+
+<div align="center"><img src="EXAPUNKS - U.S. Department of Defense (32928, 135, 8689, 2023-10-08-00-19-08).gif" /></div>
+
+## Instructions
+> Each host contains two files: a list of accounts and a list of transactions. Although the entries in these files vary, the first value of each entry is a unique identifier that connects an account to one or more transactions.
+> 
+> Determine the amount of back-pay owed to Ghast and Moss by subtracting the amount that they were paid (file 221) from the amount that they were owed (file 231). Then add their shell company (file 300) to the list of accounts payable (file 220) and issue a single payment to it for the total amount owed (file 221).
+> 
+> Note that all monetary amounts are represented as two values: dollars, then cents.
+
+## Solution
+
+### [XA](XA.exa) (global)
+```asm
+GRAB 300
+LINK 800
+SEEK 2
+COPY F X
+DROP
+LINK 801
+GRAB 220
+SEEK 9999
+SEEK -2
+COPY F T
+ADDI T 1 T
+SEEK 1
+COPY T F
+COPY X F
+DROP
+GRAB 221
+SEEK 9999
+COPY T F
+DROP
+LINK -1
+LINK 804
+COPY #DATE X
+LINK -1
+LINK 801
+GRAB 221
+SEEK 9999
+COPY X F
+```
+
+### [XB](XB.exa) (global)
+```asm
+MAKE
+COPY 1 F
+LINK 800
+DROP
+LINK 800
+GRAB 211
+
+MARK TEST
+DROP
+LINK -1
+GRAB 401
+SEEK 9999
+SEEK -1
+COPY F X
+ADDI X 1 F
+DROP
+TEST X = 1
+TJMP STAGE1
+TEST X = 2
+TJMP STAGE2
+TEST X = 3
+TJMP STAGE3
+TEST X = 4
+TJMP STAGE4
+
+COPY -1 M
+GRAB 401
+WIPE
+GRAB 300
+WIPE
+LINK 801
+GRAB 221
+SEEK 9999
+COPY -2 M
+COPY M F
+COPY M F
+HALT
+
+
+
+MARK LOOP
+SEEK 1
+TEST F = X
+FJMP LOOP
+SEEK -2
+COPY F X
+DROP
+GRAB 231
+JUMP LOOP2
+MARK LOOP_ALT
+SEEK 1
+TEST F = X
+FJMP LOOP_ALT
+SEEK -2
+COPY F X
+DROP
+GRAB 221
+MARK LOOP2
+TEST EOF
+TJMP TEST
+TEST F = X
+SEEK 3
+FJMP LOOP2
+SEEK -2
+COPY F M
+COPY F M
+JUMP LOOP2
+
+
+
+MARK STAGE1
+GRAB 300
+COPY F X
+DROP
+LINK 802
+GRAB 230
+JUMP LOOP
+
+MARK STAGE2
+COPY -1 M
+GRAB 300
+SEEK 1
+COPY F X
+DROP
+LINK 802
+GRAB 230
+JUMP LOOP
+
+MARK STAGE3
+COPY -1 M
+GRAB 300
+COPY F X
+DROP
+LINK 801
+GRAB 220
+JUMP LOOP_ALT
+
+MARK STAGE4
+COPY -1 M
+GRAB 300
+SEEK 1
+COPY F X
+DROP
+LINK 801
+GRAB 220
+JUMP LOOP_ALT
+```
+
+### [XC](XC.exa) (global)
+```asm
+MAKE
+LINK 800
+MARK START
+COPY M X
+TEST X = -1
+TJMP ZERO
+TEST X = -2
+TJMP END
+COPY X F
+COPY M F
+MARK LOOP
+SEEK -2
+COPY M X
+TEST X = -1
+TJMP SUBTR
+ADDI X F X
+SEEK -1
+COPY X F
+ADDI M F X
+SEEK -1
+COPY X F
+JUMP LOOP
+
+MARK SUBTR
+SEEK 1
+SWIZ F 3 X
+TEST X > 0
+FJMP NEXT
+SEEK -2
+ADDI F X T
+MULI X 100 X
+SUBI F X X
+SEEK -2
+COPY T F
+COPY X F
+MARK NEXT
+DROP
+MAKE
+JUMP START
+
+MARK ZERO
+COPY 0 F
+COPY 0 F
+JUMP NEXT
+
+MARK END
+WIPE
+; 400 - OWED TO GHAST
+; 402 - OWED TO MOSS
+; 403 - PAID TO GHAST
+; 404 - PAID TO MOSS
+GRAB 403
+COPY F T
+COPY F X
+WIPE
+GRAB 400
+SUBI F T T
+SUBI F X X
+SEEK -2
+COPY T F
+TEST X < 0
+TJMP SUBTR2
+COPY X F
+JUMP MOSS
+MARK SUBTR2
+ADDI X 100 X
+COPY X F
+SEEK -2
+SUBI F 1 X
+SEEK -1
+COPY X F
+MARK MOSS
+DROP
+GRAB 404
+COPY F T
+COPY F X
+WIPE
+GRAB 402
+SUBI F T T
+SUBI F X X
+SEEK -2
+COPY T F
+TEST X < 0
+TJMP SUBTR3
+COPY X F
+JUMP FIN
+MARK SUBTR3
+ADDI X 100 X
+COPY X F
+SEEK -2
+SUBI F 1 X
+SEEK -1
+COPY X F
+MARK FIN
+SEEK -2
+COPY F X
+COPY F T
+WIPE
+GRAB 400
+ADDI X F X
+ADDI T F T
+SEEK -2
+COPY X F
+COPY T F
+TEST T > 99
+FJMP WIPE
+SEEK -1
+SWIZ F 3 X
+SEEK -2
+ADDI F X T
+MULI X 100 X
+SUBI F X X
+COPY T M
+COPY X M
+WIPE
+MARK WIPE
+SEEK -2
+COPY F M
+COPY F M
+WIPE
+```
+
+#### Results
+| Cycles | Size | Activity |
+|--------|------|----------|
+| 827    | 235  | 19       |

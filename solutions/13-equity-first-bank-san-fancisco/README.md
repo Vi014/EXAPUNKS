@@ -1,6 +1,6 @@
 # 13: Equity First Bank (San Fancisco)
 
-<div align="center"><img src="EXAPUNKS - Equity First Bank (4007, 34, 10, 2023-07-31-12-14-23).gif" /></div>
+<div align="center"><img src="EXAPUNKS - Equity First Bank (4007, 34, 10, 2023-10-07-23-44-33).gif" /></div>
 
 ## Instructions
 > Dispense all available cash from all connected ATMs.

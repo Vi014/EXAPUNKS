@@ -1,6 +1,6 @@
 # 3: Trash World News (Tutorial 3)
 
-<div align="center"><img src="EXAPUNKS - TRASH WORLD NEWS (9, 12, 4, 2023-07-31-12-12-30).gif" /></div>
+<div align="center"><img src="EXAPUNKS - TRASH WORLD NEWS (9, 12, 4, 2023-10-07-23-42-13).gif" /></div>
 
 ## Instructions
 > File 199 contains exactly two values: a keyword and a number. Create a new file in the *outbox* and copy those two values to it, swapping their order so that the number is first. When you are finished, delete file 199.

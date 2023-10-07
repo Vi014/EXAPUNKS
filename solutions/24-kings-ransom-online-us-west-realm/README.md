@@ -1,6 +1,6 @@
 # 24: King's Ransom Online (US West Realm)
 
-<div align="center"><img src="EXAPUNKS - King's Ransom Online (335, 38, 25, 2023-07-31-12-25-57).gif" /></div>
+<div align="center"><img src="EXAPUNKS - King's Ransom Online (335, 38, 25, 2023-10-08-00-03-07).gif" /></div>
 
 ## Instructions
 > ﻿Reset the ownership of all castles and sub-buildings to ‗P00000‗ (file 300), the player ID for unowned buildings.

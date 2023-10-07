@@ -1,6 +1,6 @@
 # 17: Digital Library Project (Patron Access System)
 
-<div align="center"><img src="EXAPUNKS - Digital Library Project (1312, 50, 74, 2023-07-31-12-19-30).gif" /></div>
+<div align="center"><img src="EXAPUNKS - Digital Library Project (1312, 50, 74, 2023-10-07-23-52-45).gif" /></div>
 
 ## Instructions
 > Books are stored in the host corresponding to the first digit of their call number, while a book's file ID is 200 plus the last two digits of the call number. For example, book 512 would be stored in the host *500-599* as file 212.

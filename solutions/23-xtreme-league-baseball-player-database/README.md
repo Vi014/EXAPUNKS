@@ -1,6 +1,6 @@
 # 23: Xtreme League Baseball (Player Database)
 
-<div align="center"><img src="EXAPUNKS - Xtreme League Baseball (3916, 53, 1, 2023-07-31-12-24-27).gif" /></div>
+<div align="center"><img src="EXAPUNKS - Xtreme League Baseball (3916, 53, 1, 2023-10-08-00-01-56).gif" /></div>
 
 ## Instructions
 > The hosts *active* and *penalty* contain files that correspond to extreme baseball players (files 200-299), along with a directory file that contains a list of those files' IDs (file 199). Each player file contains their name and the following statistics in this order: BA, ZA, APB, WRT, OI, OD, PC, and PS.

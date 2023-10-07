@@ -1,6 +1,6 @@
 # 20: Mitsuzen HDI-10 (Left Hand)
 
-<div align="center"><img src="EXAPUNKS - Mitsuzen HDI-10 (274, 51, 601, 2023-07-31-12-22-26).gif" /></div>
+<div align="center"><img src="EXAPUNKS - Mitsuzen HDI-10 (274, 51, 601, 2023-10-07-23-58-09).gif" /></div>
 
 ## Instructions
 > There are three nerve signals that need to be relayed: muscle control (M), which runs from your central nervous system (CNS) to your hand (HND), and heat (H) and pressure (P), which run the other direction.

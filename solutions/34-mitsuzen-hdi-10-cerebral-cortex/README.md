@@ -1,6 +1,6 @@
 # 34: Mitsuzen HDI-10 (Cerebral Cortex)
 
-<div align="center"><img src="EXAPUNKS - Mitsuzen HDI-10 (2229, 143, 16, 2023-07-31-12-54-28).gif" /></div>
+<div align="center"><img src="EXAPUNKS - Bloodlust Online (397, 122, 26, 2023-10-08-00-15-00).gif" /></div>
 
 ## Instructions
 > Create a file in your host containing the hostname and hardware register value of each neuron exactly once, sorted as pairs from lowest to highest hostname.

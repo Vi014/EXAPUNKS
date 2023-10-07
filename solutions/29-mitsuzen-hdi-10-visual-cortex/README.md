@@ -1,6 +1,6 @@
 # 29: Mitsuzen HDI-10 (Visual Cortex)
 
-<div align="center"><img src="EXAPUNKS - Mitsuzen HDI-10 (402, 63, 12, 2023-07-31-12-28-45).gif" /></div>
+<div align="center"><img src="EXAPUNKS - Mitsuzen HDI-10 (402, 63, 12, 2023-10-08-00-08-13).gif" /></div>
 
 ## Instructions
 > Read a value from each of the optic nerves present and write the correct value to the nerve that runs deeper into your visual cortex (V-CTX). To determine the value that should be written, count the number of values read that are greater than -55, multiply that count by 5, and then subtract 75. Repeat _ad infinitum_.
